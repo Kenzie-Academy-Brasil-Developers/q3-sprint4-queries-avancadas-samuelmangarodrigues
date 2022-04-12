@@ -4,7 +4,7 @@ SELECT * FROM enderecos;
 --SELECT 2--
 SELECT u.nome,u.email,u.senha,u.endereco_id,e.rua,e.pais,e.cidade
 FROM usuarios AS u
-INNER JOIN enderecos AS e
+JOIN enderecos AS e
     ON u.endereco_id = e.id;
 
 --SELECT 3--

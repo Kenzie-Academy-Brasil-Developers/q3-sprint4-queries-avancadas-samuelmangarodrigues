@@ -16,8 +16,8 @@ CREATE TABLE IF NOT EXISTS usuarios_redes_sociais(
     id BIGSERIAL PRIMARY KEY,
     usuario_id  INTEGER NOT NULL,
     redes_sociai_id INTEGER NOT NULL,
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
-    FOREIGN KEY (redes_sociai_id) REFERENCES redes_sociais(id)
+    CONSTRAINT fk_usuario_id FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+    CONSTRAINT fk_redes_sociai_id FOREIGN KEY (redes_sociai_id) REFERENCES redes_sociais(id)
 
 );
 
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS usuarios(
     email   VARCHAR(100) NOT NULL   UNIQUE,
     senha   VARCHAR     NOT NULL,
     endereco_id INTEGER NOT NULL
-    FOREIGN KEY (endereco_id) REFERENCES enderecos(id)
+    CONSTRAINT fk_endereco_id FOREIGN KEY (endereco_id) REFERENCES enderecos(id)
 
 );
 
